@@ -112,3 +112,60 @@ Do Until IsEmpty(Cells(i, 1))
 
 
 End Sub
+
+' APPELS DE FONCTIONS ############
+
+' Passe la référence en argument.
+Sub MaProcedure_1(ByRef x As Integer)
+ x = x * 2
+End Sub
+
+' Passe la valeur en argument.
+Sub MaProcedure_2(ByVal y As Integer)
+ y = y * 2
+End Sub
+
+' ByRef est la valeur par défaut si non spécifiée.
+Sub MaProcedure_3(z As Integer)
+ z = z * 2
+End Sub
+
+Sub Test()
+
+ ' On utilise une variable pour la faire changer
+ Dim nombre_a_change As Integer
+ nombre_a_change = 50
+
+ ' On applique à notre variable la première sous-routine
+ MaProcedure_1 nombre_a_change
+ MsgBox nombre_a_change
+    
+ ' On applique à notre variable la deuxième sous-routine
+ MaProcedure_2 nombre_a_change
+ MsgBox nombre_a_change
+
+ ' On applique à notre variable la troisième sous-routine
+ MaProcedure_3 nombre_a_change
+ MsgBox nombre_a_change
+End Sub
+
+Function test(parametre1 As Byte, Optional parametre2 As Byte)
+
+Function multiplier(nombre1, nombre2)
+
+ multiplier = nombre1*nombre2
+
+End Function
+
+Sub test()
+ Dim variable1 As Byte, variable2 As Byte
+ variable1 = 3
+ variable2 = 5
+ 
+ resultat = multiplier(variable1, variable2)
+ 
+ MsgBox resultat
+End Sub
+
+
+
